@@ -1,0 +1,208 @@
+*, html {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: #DCE5EF;
+}
+
+main {
+    background: rgb(59,75,111);
+    background: linear-gradient(184deg, rgba(59,75,111,1) 0%, rgba(84,158,189,1) 40%, rgba(144,194,209,1) 100%);
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    background-color: transparent;
+    width: 90vw;
+    height: 90vh;
+    max-width: 450px;
+    max-height: 700px;
+    animation: 0.4s ease-in 0s 1 onLoadAnimation;
+    perspective: 1000px;
+}
+
+.inner {
+    background-color: #3B4B6F;
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+@keyframes onLoadAnimation {
+    0% {
+        transform: scale(90%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(100%);
+        opacity: 1;
+    }
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+    margin-top: 5vh;
+}
+
+.links-list {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    margin-top: 5vh;
+}
+
+.links-list-element {
+    width: 80%;
+    border-radius: 5px;
+    background-color: #BFC229;
+    margin: auto;
+    margin-bottom: 2vh;
+    transition: 0.4s ease-out 0s 1;
+}
+
+.links-list-element > a, .mail-button  {
+    width: 100%;
+    color: #3B4B6F;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5% 10%;
+}
+
+.mail-button {
+    background-color: transparent;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+.mail-button > p {
+    margin: 0;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 1rem;
+}
+
+a > p {
+    margin: 0;
+}
+
+.links-list-element:hover {
+    transform: translateX(3px) translateY(-3px);
+}
+
+.links-list-element:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+p {
+    margin-top: 5vh;
+    text-align: center;
+}
+
+.front, .back {
+    position: absolute;
+    width: 90vw;
+    height: 90vh;
+    padding: 0 5vh 5vh 5vh;
+    max-width: 450px;
+    max-height: 700px;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+
+.surprise .surprise {
+    transform: rotateY(180deg);
+}
+
+.front {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+.back > p {
+    margin-bottom: 5vh;
+}
+
+.back > ul > li {
+    margin-bottom: 15px;
+}
+
+.hidden-button {
+    background-color: #3B4B6F;
+    color: #3B4B6F;
+    border-radius: 50%;
+    border:solid 1px #3B4B6F;
+    width: 50px;
+    height: 50px;
+    bottom: 0;
+    right: 0;
+    cursor: pointer;
+    z-index: 10;
+}
+
+#snackbar {
+    visibility: hidden; 
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #BFC229;
+    color: #3B4B6F;
+    text-align: center; 
+    border-radius: 2px; 
+    padding: 16px;
+    position: fixed; 
+    z-index: 1; 
+    left: 50%; 
+    top: 30px; 
+  }
+
+  #snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+  
+  @-webkit-keyframes fadein {
+    from {top: 0; opacity: 0;}
+    to {top: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {top: 0; opacity: 0;}
+    to {top: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {top: 30px; opacity: 1;}
+    to {top: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {top: 30px; opacity: 1;}
+    to {top: 0; opacity: 0;}
+  }

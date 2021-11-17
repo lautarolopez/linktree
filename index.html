@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <title>Hi! I'm Lau</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class='main'>
+        <section class="card">
+            <section class="inner">
+                <button class="hidden-button" aria-hidden="true">Shh</button>  
+                <section class="front">
+                    <h1>Hi, Lau here!</h1>
+                    <img src="profile.jpg" alt="lau's profile picture">
+                    <p>This is just a placeholder, my site is under construction right now (I promise!), but in the meantime you can reach me in the links below.</p>
+                    <ul class="links-list">
+                        <li class="links-list-element"><a href="https://www.linkedin.com/in/lautarolopez/"><p>LinkedIn</p><i class="fab fa-linkedin-in"></i></a></li>
+                        <li class="links-list-element"><a href="https://www.github.com/lautarolopez"><p>Github</p><i class="fab fa-github"></i></a></li>
+                        <li class="links-list-element"><a href="mailto:lautaro.lopez98@gmail.com"><p>Mail</p><i class="far fa-envelope"></i></a></li>
+                        <li class="links-list-element"><button class="mail-button"><p>Copy my mail</p><i class="fa-solid fa-envelope-open-text"></i></button></li>
+                    </ul>
+                </section>
+                <section class="back">
+                    <p>So... you found the fun facts section. Here you have some easter eggs.</p>
+                    <ul>
+                        <li>I love Deno 🦕</li>
+                        <li>Pineapple pizza and raisin empanadas? Hell yeah.</li>
+                        <li>In Naruto's world I'm a Nara 🚫</li>
+                        <li>I'm also a proud Hufflepuff 🦡</li>
+                        <li>Also I'm up to date with One Piece manga.</li>
+                        <li>I suck at League of Legends but I can't stop playing</li>
+                        <li>I'm a huge hincha de Bokita</li>
+                    </ul>
+                </section>
+            </section>
+        </section>
+    </main>
+    <div id="snackbar">Done! 👍</div>
+</body>
+<script>
+    const hiddenButton = document.querySelector('.hidden-button');
+    const mailButton = document.querySelector('.mail-button');
+    const card = document.querySelector('.card');
+    const inner = document.querySelector('.inner');
+    const snackbar = document.querySelector('#snackbar');
+
+    hiddenButton.addEventListener('click', () => {
+        card.classList.toggle('surprise');
+        inner.classList.toggle('surprise');
+    })
+
+    mailButton.addEventListener('click', () => {
+        navigator.clipboard.writeText('lautaro.lopez98@gmail.com');
+        snackbar.classList.add('show');
+        setTimeout(() => {
+            snackbar.classList.remove('show');
+        }, 3000)
+    })
+
+</script>
+</html>
